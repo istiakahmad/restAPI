@@ -1,0 +1,138 @@
+Microsoft Windows [Version 10.0.17763.107]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+D:\python\restAPI_django>python
+Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+D:\python\restAPI_django>python -V
+Python 3.6.6
+
+D:\python\restAPI_django>virtualenv env
+Using base prefix 'c:\\users\\ishan\\appdata\\local\\programs\\python\\python36'
+New python executable in D:\python\restAPI_django\env\Scripts\python.exe
+Installing setuptools, pip, wheel...
+done.
+
+D:\python\restAPI_django>cd env
+
+D:\python\restAPI_django\env>cd Scripts
+
+D:\python\restAPI_django\env\Scripts>activate
+
+(env) D:\python\restAPI_django\env\Scripts>cd ..
+
+(env) D:\python\restAPI_django\env>cd ..
+
+(env) D:\python\restAPI_django>cd env/Scripts
+
+(env) D:\python\restAPI_django\env\Scripts>cd ..
+
+(env) D:\python\restAPI_django\env>cd ..
+
+(env) D:\python\restAPI_django>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is 3042-94F0
+
+ Directory of D:\python\restAPI_django
+
+07/17/2019  10:54 AM    <DIR>          .
+07/17/2019  10:54 AM    <DIR>          ..
+07/17/2019  10:54 AM    <DIR>          env
+               0 File(s)              0 bytes
+               3 Dir(s)  159,245,697,024 bytes free
+
+(env) D:\python\restAPI_django>pip install django
+Collecting django
+  Downloading https://files.pythonhosted.org/packages/39/b0/2138c31bf13e17afc32277239da53e9dfcce27bac8cb68cf1c0123f1fdf5/Django-2.2.3-py3-none-any.whl (7.5MB)
+     |████████████████████████████████| 7.5MB 125kB/s
+Collecting sqlparse (from django)
+  Using cached https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Collecting pytz (from django)
+  Using cached https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl
+Installing collected packages: sqlparse, pytz, django
+Successfully installed django-2.2.3 pytz-2019.1 sqlparse-0.3.0
+
+(env) D:\python\restAPI_django>pip install djangorestframework
+Collecting djangorestframework
+  Downloading https://files.pythonhosted.org/packages/d8/ab/8e346b337bfbfa27b940a8103459fe33f1fa985e3202debd15a844522735/djangorestframework-3.10.0-py3-none-any.whl (908kB)
+     |████████████████████████████████| 911kB 67kB/s
+Installing collected packages: djangorestframework
+Successfully installed djangorestframework-3.10.0
+
+(env) D:\python\restAPI_django>pip install markdown
+Collecting markdown
+  Downloading https://files.pythonhosted.org/packages/c0/4e/fd492e91abdc2d2fcb70ef453064d980688762079397f779758e055f6575/Markdown-3.1.1-py2.py3-none-any.whl (87kB)
+     |████████████████████████████████| 92kB 109kB/s
+Requirement already satisfied: setuptools>=36 in d:\python\restapi_django\env\lib\site-packages (from markdown) (41.0.1)
+Installing collected packages: markdown
+Successfully installed markdown-3.1.1
+
+(env) D:\python\restAPI_django>pip install django-filter
+Collecting django-filter
+  Downloading https://files.pythonhosted.org/packages/0a/c9/acc63b687002afae8b5137afd6230d88c99411aa2daedf07fed3f0913516/django_filter-2.2.0-py3-none-any.whl (69kB)
+     |████████████████████████████████| 71kB 124kB/s
+Requirement already satisfied: Django>=1.11 in d:\python\restapi_django\env\lib\site-packages (from django-filter) (2.2.3)
+Requirement already satisfied: sqlparse in d:\python\restapi_django\env\lib\site-packages (from Django>=1.11->django-filter) (0.3.0)
+Requirement already satisfied: pytz in d:\python\restapi_django\env\lib\site-packages (from Django>=1.11->django-filter) (2019.1)
+Installing collected packages: django-filter
+Successfully installed django-filter-2.2.0
+
+(env) D:\python\restAPI_django>pip freeze
+Django==2.2.3
+django-filter==2.2.0
+djangorestframework==3.10.0
+Markdown==3.1.1
+pytz==2019.1
+sqlparse==0.3.0
+
+(env) D:\python\restAPI_django>django-admin startproject RestAPI
+
+(env) D:\python\restAPI_django>cd env
+
+(env) D:\python\restAPI_django\env>django-admin startproject RestAPI
+
+(env) D:\python\restAPI_django\env>cd RestAPI
+
+(env) D:\python\restAPI_django\env\RestAPI>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+(env) D:\python\restAPI_django\env\RestAPI>python manage.py createsuperuser
+Username (leave blank to use 'ishan'): ishan
+Email address: a@gmail.com
+Password:
+Password (again):
+Error: Blank passwords aren't allowed.
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+(env) D:\python\restAPI_django\env\RestAPI>python manage.py startapp status
+
+(env) D:\python\restAPI_django\env\RestAPI>python manage.py makemigrations
+
+(env) D:\python\restAPI_django\env\RestAPI>python manage.py migrate
+
